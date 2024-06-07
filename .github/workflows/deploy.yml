@@ -19,7 +19,7 @@ jobs:
       - name: Get Code
         uses: actions/checkout@v4
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4.0.2
         with:
           path: ~/.npm
           key: npm-deps-${{ hashFiles('**/package-lock.json') }}
