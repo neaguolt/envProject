@@ -4,14 +4,15 @@ on:
     branches:
       - main
       - dev
+  workflow_dispatch:
 env:
   MONGODB_DB_NAME: gha-demo
 jobs:
   test:
     env:
       MONGODB_CLUSTER_ADDRESS: cluster0.ea3ztoc.mongodb.net
-      MONGODB_USERNAME: nofloop
-      MONGODB_PASSWORD: ocHsyURzREFgGS85  
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}  
       PORT: 8080  
     environment: testing
     runs-on: ubuntu-latest
